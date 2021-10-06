@@ -11,7 +11,7 @@
     <releaseNotes>Added possibility to have a customized suspension time in seconds</releaseNotes>
     <copyright>Weslley Ramos 2021</copyright>
     <tags>ASP.NET MVC, throttling, rate limit, request block</tags>
-    <projectUrl>https://github.com/stefanprodan/MvcThrottle</projectUrl>
+    <projectUrl>https://github.com/weslleyramos/MvcThrottleImproved</projectUrl>
     <language>en-US</language>
     <dependencies>
       <dependency id="Microsoft.AspNet.Mvc" version="5.1.0" />
