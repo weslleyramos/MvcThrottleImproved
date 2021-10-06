@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace MvcThrottle
 {
@@ -14,6 +9,11 @@ namespace MvcThrottle
         public long PerHour { get; set; }
         public long PerDay { get; set; }
         public long PerWeek { get; set; }
+
+        /// <summary>
+        /// The suspension time in seconds
+        /// </summary>
+        public long SuspendTime { get; set; }
 
         public long GetLimit(RateLimitPeriod period)
         {

@@ -1,6 +1,6 @@
 ﻿using MvcThrottle.Demo.Helpers;
+using MvcThrottle.Repositories;
 using System.Collections.Generic;
-using System.Web;
 using System.Web.Mvc;
 
 namespace MvcThrottle.Demo
@@ -11,18 +11,17 @@ namespace MvcThrottle.Demo
         {
             filters.Add(new HandleErrorAttribute());
 
-            var throttleFilter = new MvcThrottleCustomFilter
-            {
-                Policy = new MvcThrottle.ThrottlePolicy(perSecond: 2, perMinute: 10, perHour: 60 * 10, perDay: 600 * 10)
-                {
-                    //scope to IPs
-                    IpThrottling = true,
-                    IpRules = new Dictionary<string, MvcThrottle.RateLimits>
-                    { 
+            var throttleFilter = new MvcThrottleCustomFilter(
+                    policy: new ThrottlePolicy(perSecond: 2, perMinute: 10, perHour: 60 * 10, perDay: 600 * 10)
+                    {
+                        //scope to IPs
+                        IpThrottling = true,
+                        IpRules = new Dictionary<string, MvcThrottle.RateLimits>
+                    {
                         { "::1/10", new MvcThrottle.RateLimits { PerHour = 15 } },
                         { "192.168.2.1", new MvcThrottle.RateLimits { PerMinute = 30, PerHour = 30*60, PerDay = 30*60*24 } }
                     },
-                    IpWhitelist = new List<string> 
+                        IpWhitelist = new List<string>
                     {
                         //localhost
                         // "::1",
@@ -34,7 +33,7 @@ namespace MvcThrottle.Demo
                         "64.68.0.1 - 64.68.255.255",
                         "64.233.0.1 - 64.233.255.255",
                         "66.249.1 - 66.249.255",
-                        "66.249.0.1 - 66.249.255.255",                        
+                        "66.249.0.1 - 66.249.255.255",
                         "209.85.0.1 - 209.85.255.255",
                         "209.185.1 - 209.185.255",
                         "216.239.1 - 216.239.255",
@@ -66,23 +65,23 @@ namespace MvcThrottle.Demo
                         "95.108.0.1 - 95.108.255.255",
                     },
 
-                    //scope to clients
-                    ClientThrottling = true,
-                    //white list authenticated clients
-                    ClientWhitelist = new List<string> { "auth" },
+                        //scope to clients
+                        ClientThrottling = true,
+                        //white list authenticated clients
+                        ClientWhitelist = new List<string> { "auth" },
 
-                    //scope to requests path
-                    EndpointThrottling = true,
-                    EndpointType = EndpointThrottlingType.AbsolutePath,
-                    EndpointRules = new Dictionary<string, RateLimits>
-                    { 
+                        //scope to requests path
+                        EndpointThrottling = true,
+                        EndpointType = EndpointThrottlingType.AbsolutePath,
+                        EndpointRules = new Dictionary<string, RateLimits>
+                    {
                         { "home/", new RateLimits { PerHour = 90 } },
                         { "Home/about", new RateLimits { PerHour = 30 } }
                     },
 
-                    //scope to User-Agents
-                    UserAgentThrottling = true,
-                    UserAgentWhitelist = new List<string>
+                        //scope to User-Agents
+                        UserAgentThrottling = true,
+                        UserAgentWhitelist = new List<string>
                     {
                         "Googlebot",
                         "Mediapartners-Google",
@@ -91,16 +90,15 @@ namespace MvcThrottle.Demo
                         "YandexBot",
                         "DuckDuckBot"
                     },
-                    UserAgentRules = new Dictionary<string, RateLimits>
+                        UserAgentRules = new Dictionary<string, RateLimits>
                     {
                         {"Facebot", new RateLimits { PerMinute = 1 }},
                         {"Sogou", new RateLimits { PerHour = 1 } }
                     }
-
-                },
-                IpAddressParser = new NginxIpAddressParser(),
-                Logger = new MvcThrottleCustomLogger()
-            };
+                    },
+                    throttleRepository: new CacheRepository(),
+                    logger: null
+                );
 
             filters.Add(throttleFilter);
         }

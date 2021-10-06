@@ -46,6 +46,11 @@ namespace MvcThrottle
         /// </summary>
         public bool StackBlockedRequests { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value to suspend request after rate limit exceeded (in seconds) 
+        /// </summary>
+        public long SuspendTime { get; set; }
+
         internal Dictionary<RateLimitPeriod, long> Rates { get; set; }
 
         /// <summary>

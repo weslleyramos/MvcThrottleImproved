@@ -21,7 +21,7 @@ namespace MvcThrottle.Demo.Controllers
             return View();
         }
 
-        [DisableThrottling]
+        [EnableThrottling(PerSecond = 2, SuspendTime = 30)]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
