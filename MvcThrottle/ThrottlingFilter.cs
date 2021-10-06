@@ -218,7 +218,7 @@ namespace MvcThrottleImproved
 
                                 filterContext.Result = QuotaExceededResult(
                                     filterContext.RequestContext,
-                                    string.Format(message, rateLimit, rateLimitPeriod.ToLang()),
+                                    string.Format(message, rateLimit, rateLimitPeriod.ToLang(_language)),
                                     QuotaExceededResponseCode,
                                     requestId);
 
