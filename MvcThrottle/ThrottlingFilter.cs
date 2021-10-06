@@ -4,6 +4,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using MvcThrottleImproved.Enums;
+using MvcThrottleImproved.Extensions;
 using MvcThrottleImproved.IP;
 using MvcThrottleImproved.Repositories;
 
@@ -12,6 +14,7 @@ namespace MvcThrottleImproved
     public class ThrottlingFilter : ActionFilterAttribute
     {
         private readonly ThrottlingCore _core;
+        private readonly Language _language;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ThrottlingFilter"/> class.
@@ -21,7 +24,8 @@ namespace MvcThrottleImproved
         public ThrottlingFilter()
         {
             QuotaExceededResponseCode = (HttpStatusCode)429;
-            
+
+            _language = Language.EN;
             _core = new ThrottlingCore
             {
                 ThrottleRepository = new CacheRepository()
@@ -36,6 +40,7 @@ namespace MvcThrottleImproved
         public ThrottlingFilter(ThrottlePolicy policy,
             IThrottleRepository throttleRepository,
             IThrottleLogger logger,
+            Language language = Language.EN,
             IIpAddressParser ipAddressParser = null)
         {
             Policy = policy;
@@ -47,6 +52,7 @@ namespace MvcThrottleImproved
                 IpAddressParser = ipAddressParser ?? new IpAddressParser()
             };
 
+            _language = language;
             Logger = logger;
             QuotaExceededResponseCode = (HttpStatusCode)429;
         }
@@ -212,7 +218,7 @@ namespace MvcThrottleImproved
 
                                 filterContext.Result = QuotaExceededResult(
                                     filterContext.RequestContext,
-                                    string.Format(message, rateLimit, rateLimitPeriod),
+                                    string.Format(message, rateLimit, rateLimitPeriod.ToLang()),
                                     QuotaExceededResponseCode,
                                     requestId);
 
