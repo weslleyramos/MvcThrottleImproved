@@ -1,8 +1,8 @@
-MvcThrottle
+MvcThrottleImproved
 ===========
 
 [![Build status](https://ci.appveyor.com/api/projects/status/xdyd4xb4bihivdjt?svg=true)](https://ci.appveyor.com/project/stefanprodan/mvcthrottle)
-[![NuGet](https://img.shields.io/nuget/v/MvcThrottle.svg)](https://www.nuget.org/packages/MvcThrottle)
+[![NuGet](https://img.shields.io/nuget/v/MvcThrottleImproved.svg)](https://www.nuget.org/packages/MvcThrottleImproved)
 
 With MvcThrottle you can protect your site from aggressive crawlers, scraping tools or unwanted traffic spikes originated from the same location by limiting the rate of requests that a client from the same IP can make to your site or to specific routes.
 

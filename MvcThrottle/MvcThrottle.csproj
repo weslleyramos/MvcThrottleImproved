@@ -67,6 +67,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\Language.cs" />
+    <Compile Include="Extensions\RateLimitPeriodExtensions.cs" />
     <Compile Include="Repositories\CacheRepository.cs" />
     <Compile Include="IP\IpAddressParser.cs" />
     <Compile Include="IP\IIpAddressParser.cs" />
