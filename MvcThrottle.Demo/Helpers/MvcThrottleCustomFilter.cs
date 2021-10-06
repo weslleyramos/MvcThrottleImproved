@@ -1,6 +1,7 @@
-﻿using MvcThrottle.Repositories;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
+using MvcThrottleImproved;
+using MvcThrottleImproved.Repositories;
 
 namespace MvcThrottle.Demo.Helpers
 {

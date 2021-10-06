@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web;
 using System.Web.Caching;
 
-namespace MvcThrottle.Repositories
+namespace MvcThrottleImproved.Repositories
 {
     /// <summary>
     /// Stors throttle metrics in asp.net cache

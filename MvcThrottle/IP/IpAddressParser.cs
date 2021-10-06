@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 
-namespace MvcThrottle.IP
+namespace MvcThrottleImproved.IP
 {
     public class IpAddressParser : IIpAddressParser
     {

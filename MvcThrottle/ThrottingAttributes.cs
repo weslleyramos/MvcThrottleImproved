@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace MvcThrottle
+namespace MvcThrottleImproved
 {
     public class EnableThrottlingAttribute : ActionFilterAttribute, IActionFilter
     {

@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace MvcThrottle
+namespace MvcThrottleImproved
 {
     /// <summary>
     /// Stores the initial access time and the numbers of calls made from that point

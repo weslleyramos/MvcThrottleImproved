@@ -5,7 +5,7 @@ using System.Net;
 using System.Runtime.Serialization;
 using System.Text.RegularExpressions;
 
-namespace MvcThrottle.IP
+namespace MvcThrottleImproved.IP
 {
     /// <summary>
     /// IP v4 and v6 range helper by jsakamoto

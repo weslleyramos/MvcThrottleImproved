@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Caching;
 
-namespace MvcThrottle.Repositories
+namespace MvcThrottleImproved.Repositories
 {
     /// <summary>
     /// Stores policy in asp.net cache

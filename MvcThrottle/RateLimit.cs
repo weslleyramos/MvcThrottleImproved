@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MvcThrottle
+namespace MvcThrottleImproved
 {
     [Serializable]
     public class RateLimits

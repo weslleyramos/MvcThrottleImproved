@@ -2,7 +2,7 @@
 using System.Net;
 using System.Web;
 
-namespace MvcThrottle.IP
+namespace MvcThrottleImproved.IP
 {
     public interface IIpAddressParser
     {

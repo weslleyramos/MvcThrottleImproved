@@ -1,13 +1,13 @@
-﻿using MvcThrottle.Repositories;
-using System;
+﻿using System;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-using MvcThrottle.IP;
+using MvcThrottleImproved.IP;
+using MvcThrottleImproved.Repositories;
 
-namespace MvcThrottle
+namespace MvcThrottleImproved
 {
     public class ThrottlingFilter : ActionFilterAttribute
     {

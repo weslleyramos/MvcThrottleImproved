@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MvcThrottle.Repositories
+namespace MvcThrottleImproved.Repositories
 {
     /// <summary>
     /// Implement this interface if you want to create a persistent store for the throttle metrics

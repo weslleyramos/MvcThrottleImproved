@@ -1,13 +1,13 @@
-﻿using MvcThrottle.Repositories;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Web;
-using MvcThrottle.IP;
+using MvcThrottleImproved.IP;
+using MvcThrottleImproved.Repositories;
 
-namespace MvcThrottle
+namespace MvcThrottleImproved
 {
     internal class ThrottlingCore
     {

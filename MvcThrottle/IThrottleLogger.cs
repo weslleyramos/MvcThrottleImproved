@@ -1,4 +1,4 @@
-﻿namespace MvcThrottle
+﻿namespace MvcThrottleImproved
 {
     /// <summary>
     /// Log requests that exceed the limit

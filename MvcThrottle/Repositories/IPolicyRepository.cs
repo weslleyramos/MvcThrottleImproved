@@ -1,4 +1,4 @@
-﻿namespace MvcThrottle.Repositories
+﻿namespace MvcThrottleImproved.Repositories
 {
     public interface IPolicyRepository
     {

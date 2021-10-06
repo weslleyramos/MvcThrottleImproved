@@ -1,7 +1,8 @@
 ﻿using MvcThrottle.Demo.Helpers;
-using MvcThrottle.Repositories;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using MvcThrottleImproved;
+using MvcThrottleImproved.Repositories;
 
 namespace MvcThrottle.Demo
 {
@@ -16,10 +17,10 @@ namespace MvcThrottle.Demo
                     {
                         //scope to IPs
                         IpThrottling = true,
-                        IpRules = new Dictionary<string, MvcThrottle.RateLimits>
+                        IpRules = new Dictionary<string, RateLimits>
                     {
-                        { "::1/10", new MvcThrottle.RateLimits { PerHour = 15 } },
-                        { "192.168.2.1", new MvcThrottle.RateLimits { PerMinute = 30, PerHour = 30*60, PerDay = 30*60*24 } }
+                        { "::1/10", new RateLimits { PerHour = 15 } },
+                        { "192.168.2.1", new RateLimits { PerMinute = 30, PerHour = 30*60, PerDay = 30*60*24 } }
                     },
                         IpWhitelist = new List<string>
                     {

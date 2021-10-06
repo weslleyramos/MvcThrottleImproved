@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using System.Web;
-using MvcThrottle.IP;
+using MvcThrottleImproved.IP;
 
 namespace MvcThrottle.Demo.Helpers
 {

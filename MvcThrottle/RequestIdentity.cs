@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace MvcThrottle
+namespace MvcThrottleImproved
 {
     /// <summary>
     /// Stores the client ip, key and endpoint

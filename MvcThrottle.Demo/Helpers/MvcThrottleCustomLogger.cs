@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Web;
+using MvcThrottleImproved;
 
 namespace MvcThrottle.Demo.Helpers
 {
